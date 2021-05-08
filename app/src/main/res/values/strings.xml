@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">KOLTUK TAKIMLARI</string>
+
+    <string name="spinner_prompt">Kumaş Rengi Seçiniz</string>
+
+    <string-array name="MH_kumas_rengi">
+        <item>Beyaz</item>
+        <item>Siyah</item>
+        <item>Yeşil</item>
+        <item>Kırmızı</item>
+        <item>Gümüş Rengi</item>
+        <item>Kahve Rengi</item>
+        <item>Gri</item>
+        <item>Mor</item>
+        <item>İki Renk içermektedir</item>
+    </string-array>
+
+</resources>

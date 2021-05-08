@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MH_MainActivity">
+
+    <Spinner
+        android:id="@+id/MH_sp_urun_rengi"
+        android:layout_width="307dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="42dp"
+        android:entries="@array/MH_kumas_rengi"
+        android:prompt="@string/spinner_prompt"
+        app:layout_constraintBottom_toTopOf="@+id/MH_image_yeri"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MH_etxt_urun_fiyat" />
+
+    <EditText
+        android:id="@+id/MH_etxt_urun_isim"
+        android:layout_width="306dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="18dp"
+        android:ems="10"
+        android:hint="Urun Adını Giriniz "
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/MH_etxt_urun_fiyat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <EditText
+        android:id="@+id/MH_etxt_urun_fiyat"
+        android:layout_width="307dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="30dp"
+        android:ems="10"
+        android:hint="Urun Fiyatı Giriniz"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/MH_sp_urun_rengi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MH_etxt_urun_isim" />
+
+    <RadioGroup
+        android:id="@+id/MH_rg_ayak_turu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="14dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+        <RadioButton
+            android:id="@+id/MH_ahsap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Shşap" />
+
+        <RadioButton
+            android:id="@+id/MH_metal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Metal" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="39dp"
+        android:text="ÜRÜN OLUŞTURMA SAYFASI"
+        android:textColor="#3F51B5"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/MH_etxt_urun_isim"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/MH_cb_masa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:text="Masa"
+        app:layout_constraintBaseline_toBaselineOf="@+id/MH_cb_berjer"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/MH_cb_berjer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="41dp"
+        android:text="Berjer"
+        app:layout_constraintEnd_toStartOf="@+id/MH_btn_resimC"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="66dp"
+        android:text="Koltuk Ayakları"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MH_sp_urun_rengi" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="58dp"
+        android:text="Koltuklarla Yanında"
+        app:layout_constraintEnd_toStartOf="@+id/MH_image_yeri"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MH_rg_ayak_turu" />
+
+    <ImageView
+        android:id="@+id/MH_image_yeri"
+        android:layout_width="400px"
+        android:layout_height="400px"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/MH_btn_resimC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/MH_sp_urun_rengi"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/MH_btn_liste"
+        android:layout_width="175sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="65dp"
+        android:text="Listele"
+        app:backgroundTint="#F44336"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/MH_btn_ekle"
+        android:layout_width="175sp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="65dp"
+        android:onClick="MH_urun_ekle"
+        android:text="ürün ekle"
+        app:backgroundTint="#F44336"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MH_btn_resimC" />
+
+    <Button
+        android:id="@+id/MH_btn_resimC"
+        android:layout_width="0dp"
+        android:layout_height="50sp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="46dp"
+        android:text="Foto çek"
+        app:backgroundTint="#F44336"
+        app:layout_constraintBottom_toTopOf="@+id/MH_btn_ekle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/MH_cb_berjer"
+        app:layout_constraintTop_toBottomOf="@+id/MH_image_yeri" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kumaş Rengi Seçiniz"
+        app:layout_constraintBottom_toTopOf="@+id/MH_sp_urun_rengi"
+        app:layout_constraintStart_toStartOf="@+id/MH_sp_urun_rengi" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
