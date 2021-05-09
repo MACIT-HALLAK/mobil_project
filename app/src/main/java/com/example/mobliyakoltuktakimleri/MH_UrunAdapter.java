@@ -55,12 +55,11 @@ public class MH_UrunAdapter extends BaseAdapter {
             tutucu.MH_ulaYanindaki =convertView.findViewById(R.id.MH_txt_yanindakiler_li);
              MH_siparis = convertView.findViewById(R.id.MH_btn_siparişVer_li);
             convertView.setTag(tutucu);
-        }
-        else
+        }else
         {
             tutucu = (ViewHolder) convertView.getTag();
         }
-        tutucu.MH_uResim.setImageResource(MH_urun.getMH_id_image());
+        tutucu.MH_uResim.setImageURI(MH_urun.getMH_id_image());
         tutucu.MH_uIsim.setText("Model "+MH_urun.getMH_urun_isim());
         tutucu.MH_uFiyat.setText(String.valueOf(MH_urun.getMH_urun_fiyat()));
         tutucu.MH_uRengi.setText(MH_urun.getMH_urun_renk());

@@ -5,14 +5,14 @@ import android.net.Uri;
 import java.io.Serializable;
 
 public class MH_mobilya_urun implements Serializable {
-    int MH_id_image;
+    Uri MH_id_image;
     String MH_urun_isim;
     int MH_urun_fiyat;
     String MH_urun_renk;
     String MH_urun_ayaklari;
     String Mh_urun_yanindakiler;
 
-    public MH_mobilya_urun(int MH_id_image, String MH_urun_isim, int MH_urun_fiyat, String MH_urun_renk,//
+    public MH_mobilya_urun(Uri MH_id_image, String MH_urun_isim, int MH_urun_fiyat, String MH_urun_renk,//
                            String MH_urun_ayaklari, String mh_urun_yanindakiler) {
         this.MH_id_image = MH_id_image;
         this.MH_urun_isim = MH_urun_isim;
@@ -22,11 +22,11 @@ public class MH_mobilya_urun implements Serializable {
         this.Mh_urun_yanindakiler = mh_urun_yanindakiler;
     }
 
-    public int getMH_id_image() {
+    public Uri getMH_id_image() {
         return MH_id_image;
     }
 
-    public void setMH_id_image(int MH_id_image) {
+    public void setMH_id_image(Uri MH_id_image) {
         this.MH_id_image = MH_id_image;
     }
 

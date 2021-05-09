@@ -38,7 +38,7 @@ public class MH_MainActivity extends AppCompatActivity {
 
     private static final int MH_PERMISSIN_CODE =1000 ;
     private int MH_IMAGE_Cap = 1001;
-    int MH_foto_drawable_cek,MH_sayac=0;
+    int MH_foto_drawable_cek;
     ImageView MH_fotoYeri;
     Uri MH_imge_uri;
     @Override
@@ -96,7 +96,6 @@ public class MH_MainActivity extends AppCompatActivity {
     }
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        // super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode){
 
             case MH_PERMISSIN_CODE:{
@@ -112,41 +111,34 @@ public class MH_MainActivity extends AppCompatActivity {
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        //super.onActivityResult(requestCode, resultCode, data);
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
             MH_fotoYeri.setImageURI(MH_imge_uri);
-
         }
     }
     public void MH_urun_ekle(View view) {
-        MH_ayak = ((RadioButton)(findViewById(MH_ayakModeli.getCheckedRadioButtonId()))).getText().toString();
-        if (MH_masa.isChecked())
-            MH_str="Masa ";
-        if (MH_berjer.isChecked())
-            MH_str +="Berjer";
+        try {
+            MH_ayak = ((RadioButton) (findViewById(MH_ayakModeli.getCheckedRadioButtonId()))).getText().toString();
+            if (MH_masa.isChecked())
+                MH_str = "Masa ";
+            if (MH_berjer.isChecked())
+                MH_str += "Berjer";
 
-        if (Integer.parseInt(MH_urunFiyat.getText().toString()) < 0){
-            Toast.makeText(getApplicationContext(), "Fiyat Negatif Olamaz "
-                    ,Toast.LENGTH_SHORT).show();
-        }else {
-                MH_sayac++;
-                if ( MH_sayac==1)
-                MH_foto_drawable_cek = R.drawable.koltuk6;
-                if ( MH_sayac==2)
-                    MH_foto_drawable_cek = R.drawable.koltuk2;
-                if ( MH_sayac==3)
-                   MH_foto_drawable_cek = R.drawable.kolttuk3;
-                if ( MH_sayac==4)
-                     MH_foto_drawable_cek = R.drawable.koltuk7;
+            if (Integer.parseInt(MH_urunFiyat.getText().toString()) < 0) {
+                Toast.makeText(getApplicationContext(), "Fiyat Negatif Olamaz "
+                        , Toast.LENGTH_SHORT).show();
+            } else {
 
-            MH_urunler.add(new MH_mobilya_urun(MH_foto_drawable_cek,MH_urunAdi.getText().toString(),
-                    Integer.parseInt(MH_urunFiyat.getText().toString()),MH_urunRengi.getSelectedItem().toString(),
-                    MH_ayak.toString(),MH_str));
-            Toast.makeText(getApplicationContext(), "Ürün sayısı: "
-                            + MH_urunler.size() + " Eklenen: " + MH_urunler.get(MH_urunler.size() - 1).getMH_urun_isim()
-                    , Toast.LENGTH_SHORT).show();
-            MH_str="";
+                MH_urunler.add(new MH_mobilya_urun(MH_imge_uri, MH_urunAdi.getText().toString(),
+                        Integer.parseInt(MH_urunFiyat.getText().toString()), MH_urunRengi.getSelectedItem().toString(),
+                        MH_ayak.toString(), MH_str));
+                Toast.makeText(getApplicationContext(), "Ürün sayısı: "
+                                + MH_urunler.size() + " Eklenen: " + MH_urunler.get(MH_urunler.size() - 1).getMH_urun_isim()
+                        , Toast.LENGTH_SHORT).show();
+                MH_str = "";
+            }
+        } catch (Exception ex) {
+            Toast.makeText(MH_MainActivity.this, "Veri Girişi Yanlış Yaptınız", Toast.LENGTH_SHORT).show();
         }
     }
 }
